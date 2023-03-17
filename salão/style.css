@@ -1,10 +1,98 @@
 @charset "UTF:8";
 
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
 :root {
-    --cor0: #F2D335 ;
-    --cor1: #F2C641;
-    --cor2: #F2A444;
-    --cor3: #BF7636;
-    --cor4: #0D0D0D;
+    --fontRaleway: 'Raleway', sans-serif;
+    --fontGreatVibes: 'Great Vibes', cursive;
+    --fontJosefin: 'Josefin Sans', sans-serif;
+    --Preto: #141115 ;
+    --Rosa_menor: #F665C6;
+    --Branco: #F5F7DC;
+    --Lilás: #977099;
+    --Rosa_maior: #EC4693;
 
 }
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+body {
+    background-color: var(--Branco);
+    font-family: 'Times New Roman', Times, serif;
+}
+/*CABEÇALHO*/
+.logo {
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+}
+header {
+    background-color: var(--Preto);
+}
+header > h1{
+    text-align: center;
+    color: var(--Rosa_menor);
+    font-family: var(--fontJosefin);
+}
+header > p {
+    text-align: center;
+    color: var(--Lilás);
+    font-family: var(--fontGreatVibes);
+}
+/*CABEÇALHO*/
+
+/*MENU*/
+.menu {
+    font-family: var(--fontRaleway);
+    text-align: center;
+    font-size: 20;
+}
+nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-family: var(--fontRaleway);
+    background: var(--Preto);
+    height: 8vh;
+}
+nav a{ 
+    color: var(--Rosa_maior);
+    text-decoration: none;
+    padding: 0px 50px 10px 0;
+    position: relative;
+}
+nav a::after{
+    content: "";
+    width: 0%;
+    height: 4px;
+    background-color: var(--Rosa_maior);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    transition: 0.5s ease-in-out;
+}
+nav a:hover::after {
+    width: 100%;
+}
+/*MENU*/
+
+/*MAIN*/
+
+/*MAIN*/
+
+/*RODAPÉ*/
+footer {
+    text-align: center;
+    color: var(--Rosa_maior);
+    background-color: var(--Preto);
+    border-radius: 80px;
+    box-shadow: 2px 1px 2px 1px var(--Preto);
+}
+/*RODAPÉ*/
