@@ -5,10 +5,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
 
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
 :root {
     --fontRaleway: 'Raleway', sans-serif;
     --fontGreatVibes: 'Great Vibes', cursive;
     --fontJosefin: 'Josefin Sans', sans-serif;
+    --fontPacifico: 'Pacifico', cursive;
     --Preto: #141115 ;
     --Rosa_menor: #F665C6;
     --Branco: #F5F7DC;
@@ -29,23 +32,14 @@ body {
 }
 /*CABEÇALHO*/
 .logo {
-    border-radius: 50%;
     width: 150px;
     height: 150px;
 }
 header {
-    background-color: var(--Preto);
+    background: no-repeat center/65% url(Imagens/header.jpg);
+    height: calc(100vh - 150px);
 }
-header > h1{
-    text-align: center;
-    color: var(--Rosa_menor);
-    font-family: var(--fontJosefin);
-}
-header > p {
-    text-align: center;
-    color: var(--Lilás);
-    font-family: var(--fontGreatVibes);
-}
+
 /*CABEÇALHO*/
 
 /*MENU*/
@@ -54,33 +48,20 @@ header > p {
     text-align: center;
     font-size: 20;
 }
+ul {
+    list-style: none;
+    display: flex;
+    
+}
+li {
+    margin: 15px 15px;
+}
 nav {
     display: flex;
-    justify-content: space-around;
-    align-items: center;
-    font-family: var(--fontRaleway);
-    background: var(--Preto);
-    height: 8vh;
+    justify-content: space-between;
+    margin: 0 30px;
 }
-nav a{ 
-    color: var(--Rosa_maior);
-    text-decoration: none;
-    padding: 0px 50px 10px 0;
-    position: relative;
-}
-nav a::after{
-    content: "";
-    width: 0%;
-    height: 4px;
-    background-color: var(--Rosa_maior);
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    transition: 0.5s ease-in-out;
-}
-nav a:hover::after {
-    width: 100%;
-}
+
 /*MENU*/
 
 /*MAIN*/
@@ -89,10 +70,6 @@ nav a:hover::after {
 
 /*RODAPÉ*/
 footer {
-    text-align: center;
-    color: var(--Rosa_maior);
-    background-color: var(--Preto);
-    border-radius: 80px;
-    box-shadow: 2px 1px 2px 1px var(--Preto);
+    
 }
 /*RODAPÉ*/
