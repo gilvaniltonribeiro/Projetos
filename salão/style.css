@@ -2,22 +2,24 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
-@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
-
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
 
-@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Merienda:wght@300;400;500;600;700;800;900&family=Montez&family=Satisfy&display=swap');
+
 :root {
     --fontRaleway: 'Raleway', sans-serif;
-    --fontGreatVibes: 'Great Vibes', cursive;
     --fontJosefin: 'Josefin Sans', sans-serif;
-    --fontPacifico: 'Pacifico', cursive;
+    --fontMerienda: 'Merienda', cursive;
+    --fontMontez: 'Montez', cursive;
+    --fontSatisfy: 'Satisfy', cursive;
     --Preto: #141115 ;
     --Rosa_menor: #F665C6;
     --Branco: #F5F7DC;
     --Lilás: #977099;
     --Rosa_maior: #EC4693;
-
+    --Verde_forte: #008d79;
+    --Verde_fraco: #9eb5a4;
+    --Marrom: #c69378;
 }
 
 * {
@@ -29,37 +31,165 @@
 body {
     background-color: var(--Branco);
     font-family: 'Times New Roman', Times, serif;
+    width: 100vw;
 }
 /*CABEÇALHO*/
 .logo {
     width: 150px;
     height: 150px;
+    border: 1px solid var(--Verde_forte);
+    border-radius: 50%;
 }
 header {
-    background: no-repeat center/65% url(Imagens/header.jpg);
-    height: calc(100vh - 150px);
+    background: no-repeat center/cover url('Imagens/header2.jpg');
+    height: calc(144vh - 150px);
 }
-
+@media screen and (max-width: 600px) {
+    header {
+      background-size: cover;
+      height: calc(70vh - 150px);
+    }
+  }
+  @media screen and (min-width: 601px) and (max-width: 990px) {
+    header {
+        background-size: cover;
+        height: calc(110vh - 150px);
+      }
+  }
 /*CABEÇALHO*/
 
 /*MENU*/
-.menu {
-    font-family: var(--fontRaleway);
-    text-align: center;
-    font-size: 20;
-}
 ul {
     list-style: none;
     display: flex;
-    
+    font-family: var(--fontJosefin);
 }
+
 li {
-    margin: 15px 15px;
+    margin: 50px 20px;
 }
 nav {
     display: flex;
     justify-content: space-between;
-    margin: 0 30px;
+    margin: auto 30px;
+}
+ul > li > a {
+    color: var(--Verde_forte);
+    font-size: 14pt;
+    text-shadow: var(--Verde_forte) 1px 0 10px;
+
+}
+
+.header-content h1 {
+    color: var(--Verde_fraco);
+    text-shadow: var(--Verde_forte) 1px 0 10px;
+    font-family: var(--fontMontez);
+}
+.header-content p {
+    color: var(--Verde_fraco);
+    text-shadow: var(--Verde_forte) 1px 0 10px;
+    font-family: var(--fontMerienda);
+
+}
+
+@media screen and (max-width: 609px) {
+    /* Adjust position for small screens */
+    .header-content {
+        max-width: 330px;
+        margin: 90px auto;
+        text-align: center;
+        font-size: 10pt;
+    }
+    }
+  
+  @media screen and (min-width: 610px) and (max-width: 991px) {
+    /* Adjust position for medium screens */
+    .header-content {
+        max-width: 490px;
+        margin: 240px auto;
+        text-align: center;
+       
+        font-size: 15pt;
+    }
+  }
+  @media screen and (min-width: 992px) {
+    /* Adjust position for large screens */
+    .header-content {
+        max-width: 500px;
+        margin: 430px auto;
+        text-align: center;
+        font-size: 15pt;
+    }
+  }
+
+@media (max-width: 999px) {
+    .nav-list {
+        list-style: none;
+        display: flex;
+    }
+    .nav-list li{
+        letter-spacing: 3px;
+        margin-left: 32px;
+    }
+    .mobile-menu {
+        display: block;
+        cursor: pointer;
+    }
+    
+    .mobile-menu div {
+        width: 32px;
+        height: 2px;
+        background: var(--Verde_forte);
+        margin: 8px;
+        transition: 0.3s;
+    }
+    body {
+        overflow-x: hidden;
+    }
+    .nav-list {
+        position: absolute;
+        top: 8vh;
+        right: 0;
+        width: 50vw;
+        height: 92vh;
+        background: linear-gradient(to left, var(--Verde_fraco), var(--Branco));
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+        transform: translateX(100%);
+        transition: transform 0.3s ease-in;
+    }
+    .nav-list li {
+        margin-left: 0;
+        opacity: 0;
+    }
+    .mobile-menu {
+        display: block;
+    }
+}
+
+.nav-list.active {
+    transform: translateX(0);
+}
+
+@keyframes navLinkFade {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+.mobile-menu.active .line1 {
+    transform: rotate(-45deg) translate(-8px, 8px);
+}
+.mobile-menu.active .line2 {
+    opacity: 0;
+}
+.mobile-menu.active .line3 {
+    transform: rotate(45deg) translate(-5px, -7px);
 }
 
 /*MENU*/
@@ -69,7 +199,5 @@ nav {
 /*MAIN*/
 
 /*RODAPÉ*/
-footer {
-    
-}
+
 /*RODAPÉ*/
